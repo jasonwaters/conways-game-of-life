@@ -1,17 +1,21 @@
-(function() {
+(function () {
+    let life = new Life('life');
 
-    let data = [];
-    const MAX_LIFE = 200;
+    const populationSlider = document.getElementById('population'),
+        speedSlider = document.getElementById('speed'),
+        btnReset = document.getElementById('btn-reset');
 
-    for(let y=0;y<MAX_LIFE;y++) {
-        data[y] = [];
-        for(let x=0;x<MAX_LIFE;x++) {
-            let alive = parseInt(Math.random()*10) === 0;
-
-            data[y].push(alive);
-        }
+    function resetLife() {
+        let value = parseInt(populationSlider.max) - parseInt(populationSlider.value) + 2;
+        life.reset(value);
     }
-    
-    window.life = new Life('life', data);
+
+    populationSlider.addEventListener('input', () => resetLife());
+    btnReset.addEventListener('click', () => resetLife());
+
+    speedSlider.addEventListener('input', evt => {
+        let value = parseInt(evt.target.max) - parseInt(evt.target.value) + 1;
+        life.setUpdateSpeed(value);
+    });
 
 })();

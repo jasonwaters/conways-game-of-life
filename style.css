@@ -13,3 +13,16 @@ canvas {
     background-color: #FFFFFF;
     border: 1px solid #666666;
 }
+
+a {
+    text-decoration: none;
+    color: #4b8bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.controls {
+    text-align: center;
+}

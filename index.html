@@ -6,7 +6,21 @@
         <link href="style.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
+        <h3>Conway's Game of Life</h3>
         <canvas id="life" width="1000" height="1000"></canvas>
+        <div class="controls">
+            <div>
+                <label for="population">Population</label>
+                <input id="population" type="range" min="1" max="20" step="1" value="10"/>
+                <button id="btn-reset">reset</button>
+            </div>
+
+            <div>
+                <label for="speed">Speed</label>
+                <input id="speed" type="range" min="1" max="300" step="1" value="200"/>
+            </div>
+        </div>
+        <p><a href="https://en.wikipedia.org/wiki/Conway's_Game_of_Life" target="_blank">read about it on wikipedia</a></p>
         <script type="text/javascript" src="js/life.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
     </body>
